@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EADProject.Models.movies>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>INTERNET MOVIE DATABASE - IMDb</h1>
+    <p class="lead">In this application, you will be able to View, Edit, Delete movies data in the system.</p>
+</div>
+
+<div class="jumbotron">
+    <label for="sel">Select movie genre:</label>
+    <select class="form-control" id="sel">
+        <option selected disabled>--Select--</option>
+        @foreach(var m in Model)
+        {
+            <option>@m.Genre</option>
+        }
+    </select>
+</div>
+<div class="jumbotron">
+    <div id="MoviesData">
+    </div>
+</div>

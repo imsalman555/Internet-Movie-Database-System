@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EADProject.Models.movies>
+@{
+    ViewBag.Title = "Edit Movies";
+}
+<h2>@ViewBag.Title</h2>
+
+<table class='table table-bordered table-striped'>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Duration</th>
+        <th>Release Year</th>
+        <th>Rating</th>
+        <th>Change</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.Id</td>
+            <td>@m.Title</td>
+            <td>@m.Genre</td>
+            <td>@m.Duration</td>
+            <td>@m.Release_Year</td>
+            <td>@m.Rating</td>
+            <td><a href="/Home/Edit?Id=@m.Id" id="link">Edit</a></td>
+        </tr>
+                }
+</table>
